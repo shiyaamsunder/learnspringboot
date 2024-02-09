@@ -1,3 +1,4 @@
+### Insert Student
 POST http://localhost:8080/api/v1/student
 Content-Type: application/json
 
@@ -7,6 +8,10 @@ Content-Type: application/json
   "dob": "1995-12-17"
 }
 
-###
+### Get All Students
 GET http://localhost:8080/api/v1/student
+
+### Delete Student
+@id = 3
+DELETE http://localhost:8080/api/v1/student/{{id}}
 
