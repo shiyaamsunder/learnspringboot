@@ -37,6 +37,10 @@ object Build : BuildType({
 
     artifactRules = "+:target/* => build_artifacts/target"
 
+    params {
+        param("env.JDK_17_0", "/usr/lib/jvm/java-17-amazon-corretto")
+    }
+
     vcs {
         root(DslContext.settingsRoot)
     }
