@@ -35,7 +35,7 @@ project {
 object Build : BuildType({
     name = "Build"
 
-    artifactRules = "+:target/* => build_artifacts/target"
+    artifactRules = "+:target/**/* => build_artifacts/target"
 
     params {
         param("env.JDK_17_0", "/usr/lib/jvm/java-17-amazon-corretto")
@@ -50,6 +50,8 @@ object Build : BuildType({
             id = "Maven2"
             goals = "clean install"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
+            jdkHome = "%env.JDK_17_0%"
+            param("teamcity.coverage.jacoco.classpath", "target/classes/**/*.class")
         }
     }
 
