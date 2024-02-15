@@ -52,7 +52,7 @@ object Build : BuildType({
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             jdkHome = "%env.JDK_17_0%"
             coverageEngine = jacoco {
-                classLocations = "+:/target/site/jacoco-ut/**/*"
+                classLocations = "+:/target/**/*"
                 jacocoVersion = "%teamcity.tool.jacoco.0.8.7%"
             }
         }
