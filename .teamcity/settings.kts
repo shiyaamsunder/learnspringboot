@@ -51,6 +51,10 @@ object Build : BuildType({
             goals = "clean install"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             jdkHome = "%env.JDK_17_0%"
+            coverageEngine = jacoco {
+                classLocations = "+:/target/site/jacoco-ut/**/*"
+                jacocoVersion = "%teamcity.tool.jacoco.0.8.7%"
+            }
         }
     }
 
