@@ -35,7 +35,7 @@ project {
 object Build : BuildType({
     name = "Build"
 
-    artifactRules = "+:target/* => build_artifacts/target"
+    artifactRules = "+:target/**/* => build_artifacts/target"
 
     params {
         param("env.JDK_17_0", "/usr/lib/jvm/java-17-amazon-corretto")
